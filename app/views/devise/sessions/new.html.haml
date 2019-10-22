@@ -1,17 +1,28 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.regi-user
+  .regi-user__left
+    .regi-user__left__box
+      あなたが読んだ本を紹介しよう。
+      %br
+      同じジャンルが好きなユーザーをフォローしよう。
+      %br
+      いま話題の本を見つけよう。
+  .regi-user__right
+    .regi-user__right__top
+    .regi-user__right__content
+      %h2 Log in
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in"
+      = render "devise/shared/links"
