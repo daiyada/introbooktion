@@ -10,6 +10,7 @@
     &__box{
       color: white;
       font-size: 22px;
+      line-height: 50px;
     }
   }
   &__right{
@@ -17,11 +18,11 @@
     height: 100vh;
     background-image: url(/book_image.jpg);
     background-size: cover;
-    -webkit-filter: sepia(60%);
-    -moz-filter: sepia(60%);
-    -ms-filter: sepia(60%);
-    -o-filter: sepiae(60%);
-    filter: sepia(60%);
-    opacity: 0.5;
+    -webkit-filter: sepia(70%);
+    -moz-filter: sepia(70%);
+    -ms-filter: sepia(70%);
+    -o-filter: sepiae(70%);
+    filter: sepia(70%);
+    opacity: 0.85;
   }
 }
