@@ -1,0 +1,124 @@
+.regi-user{
+  @include middle_located();
+  &__left{
+    height: 100vh;
+    width: 100%;
+    background-blend-mode: hard-light;
+    background-image: linear-gradient(-45deg ,#003300, #414d0b),url(/book_image.jpg);
+    background-size: cover;
+    filter: saturate(130%);
+    @include middle_located();
+    &__box{
+      color: white;
+      font-size: 22px;
+      line-height: 50px;
+      .fa-book-open{
+        margin-right: 15px;
+        font-size: 24px;
+      }
+    }
+  }
+  &__right{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/book_image.jpg);
+    background-size: cover;
+    -webkit-filter: sepia(80%);
+    -moz-filter: sepia(80%);
+    -ms-filter: sepia(80%);
+    -o-filter: sepiae(80%);
+    filter: sepia(100%);
+    filter: saturate(100%);
+    opacity: 0.2;
+    position: relative;
+  }
+  &__surface{
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    background-color: aquamarine;
+    opacity: 0.2;
+    z-index: 1;
+  }
+  &__surface2{
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    &__top{
+      margin: 30px 20px 0 20px;
+      width: 46vw;
+      @include middle_located();
+    }
+    .login-email{
+      height: 100%;
+      width: 210px;
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid #414d0b;
+    }
+    .login-password{
+      margin-left: 15px;
+      height: 100%;
+      width: 210px;
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      border: 1px solid #414d0b;
+    }
+    .login-button{
+      font-size: 14px;
+      margin-left: 15px;
+      padding: 11px;
+      box-sizing: border-box;
+      color: #414d0b;
+      border: 1px solid #414d0b;
+      border-radius: 15px;
+    }
+    .forget-password{
+      @include delete_link_gray();
+      font-size: 12px;
+      margin-left: 380px;
+    }
+    .regi-user__right__content{
+      margin-top: 230px;
+      &__top{
+        text-align: center;
+        font-size: 24px;
+      }
+      &__medium{
+        margin: 50px 0 0 200px;
+        font-size: 18px;
+      }
+      &__bottom{
+        text-align: center;
+        &__newaccount{
+          margin: 20px auto 0;
+          .create-account{
+            @include delete_link_white();
+            border: 1px solid #414d0b;
+            background-color: #414d0b;
+            padding: 6px 177px;
+            line-height: 28px;
+            font-weight: bold;
+            border-radius: 100px;
+          }
+        }
+        &__login{
+          margin: 20px auto 0;
+          .login-button2{
+            @include delete_link_white();
+            border: 1px solid #414d0b;
+            color: #414d0b;
+            padding: 6px 200px;
+            line-height: 16px;
+            font-weight: bold;
+            border-radius: 100px;
+          }
+        }
+      }
+    }
+  }
+}

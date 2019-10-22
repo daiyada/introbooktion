@@ -13,3 +13,13 @@
   display: flex;
   justify-content: space-around;
 }
+
+@mixin delete_link_gray() {
+  color: #555555;
+  text-decoration: none;
+}
+
+@mixin delete_link_white() {
+  color: #FFFFFF;
+  text-decoration: none;
+}

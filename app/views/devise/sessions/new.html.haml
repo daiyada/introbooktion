@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.regi-user
+  .regi-user__left
+    .regi-user__left__box
+      = fa_icon "book-open"
+      あなたが読んだ本を紹介しよう。
+      %br
+      = fa_icon "book-open"
+      同じジャンルが好きなユーザーをフォローしよう。
+      %br
+      = fa_icon "book-open"
+      いま話題の本を見つけよう。
+  .regi-user__right
+  .regi-user__surface
+  .regi-user__surface2
+    .regi-user__surface2__top
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.email_field :email, class: "login-email", placeholder: "メールアドレス"
+        = f.password_field :password, class: "login-password", placeholder: "パスワード"
+        = f.submit "ログイン", class: "login-button"
+    - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+      = link_to "パスワードを忘れた場合はこちら", new_password_path(resource_name), class: "forget-password"
+    .regi-user__right__content
+      .regi-user__right__content__top
+        さあ、知識を蓄積・共有し合おう！
+      .regi-user__right__content__medium
+        Intro"book"tionをはじめよう
+      .regi-user__right__content__bottom
+        .regi-user__right__content__bottom__newaccount
+          - if devise_mapping.registerable? && controller_name != 'registrations'
+            = link_to "アカウント作成", new_registration_path(resource_name), class: "create-account"
+        .regi-user__right__content__bottom__login
+          = link_to "ログイン", new_session_path(resource_name), class: "login-button2"
