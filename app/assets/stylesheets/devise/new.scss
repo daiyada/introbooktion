@@ -28,7 +28,7 @@
     -ms-filter: sepia(80%);
     -o-filter: sepiae(80%);
     filter: sepia(100%);
-    filter: saturate(100%);
+    filter: saturate(80%);
     opacity: 0.2;
     position: relative;
   }
@@ -37,7 +37,7 @@
     height: 100vh;
     position: absolute;
     left: 50%;
-    background-color: aquamarine;
+    background-color: #E3FF7D;
     opacity: 0.2;
     z-index: 1;
   }
