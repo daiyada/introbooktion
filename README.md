@@ -8,7 +8,7 @@
 |name_id|string|null: false|
 ### Association
 - has_one :icon, dependent: :destroy
-- has_many :likes, through :users_likes
+- has_many :likes
 
 ## iconsテーブル
 |Column|Type|Options|
@@ -30,20 +30,20 @@
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|string|null: false|
+|content|string||
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 ### Association
 - has_many :likes
 - has_many :comments
-- has_many :images
+- has_many :images, dependent: :destroy
 - belongs_to :user
 - belongs_to :category
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
+|image|string||
 |tweet|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :tweet
@@ -63,4 +63,4 @@
 |------|----|-------|
 |category|string|null: false|
 ### Association
-- has_many :tweet
+- has_many :tweets
