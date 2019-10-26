@@ -1,0 +1,13 @@
+.outer-circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 1.0px #414d0b;
+  background-color: white;
+  position: relative;
+  &__icon{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+}
