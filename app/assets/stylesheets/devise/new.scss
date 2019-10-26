@@ -46,6 +46,13 @@
     position: absolute;
     left: 50%;
     z-index: 2;
+    &__icon{
+      position: absolute;
+      right: 0px;
+      top: 25px;
+      color: rgb(65, 77, 11);
+      z-index: 3;
+    }
     &__top{
       margin: 30px 20px 0 20px;
       width: 46vw;
