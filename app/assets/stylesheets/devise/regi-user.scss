@@ -23,11 +23,6 @@
     height: 100vh;
     background-image: url(/book_image.jpg);
     background-size: cover;
-    -webkit-filter: sepia(80%);
-    -moz-filter: sepia(80%);
-    -ms-filter: sepia(80%);
-    -o-filter: sepiae(80%);
-    filter: sepia(100%);
     filter: saturate(80%);
     opacity: 0.2;
     position: relative;
