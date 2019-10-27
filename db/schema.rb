@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_094041) do
+ActiveRecord::Schema.define(version: 2019_10_27_024407) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_10_26_094041) do
     t.bigint "tweet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_images_on_comment_id"
     t.index ["tweet_id"], name: "index_images_on_tweet_id"
   end
 
@@ -91,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_094041) do
   add_foreign_key "comments", "tweets"
   add_foreign_key "comments", "users"
   add_foreign_key "icons", "users"
+  add_foreign_key "images", "comments"
   add_foreign_key "images", "tweets"
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
