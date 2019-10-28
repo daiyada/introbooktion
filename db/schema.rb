@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_024407) do
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_10_28_022506) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment", null: false
@@ -69,10 +63,10 @@ ActiveRecord::Schema.define(version: 2019_10_27_024407) do
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_tweets_on_category_id"
+    t.string "category", null: false
+    t.string "title", null: false
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
@@ -99,6 +93,5 @@ ActiveRecord::Schema.define(version: 2019_10_27_024407) do
   add_foreign_key "likes", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
-  add_foreign_key "tweets", "categories"
   add_foreign_key "tweets", "users"
 end
