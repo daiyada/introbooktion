@@ -1,0 +1,131 @@
+.tweet-list__content__backimage{
+  border-bottom: solid 1px #414d0b;
+  width: 100%;
+  height: 200px;
+}
+.tweet-list__content__edit{
+  width: 150px;
+  margin: 15px 0px 0 470px;
+  align-items: right;
+  padding: 5px 15px;
+  border: solid 1px #414d0b;
+  color: white;
+  background-color:  #414d0b;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color;
+}
+.tweet-list__content__edit:hover{
+  background-color: #606B2F;
+}
+.tweet-list__content__icon{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: solid 1px #414d0b;
+  background-color: white;;
+  padding: 5px;
+  position: absolute;
+  top: 190px;
+  left: 25px;
+}
+.tweet-list__content__explanation{
+  margin: 26px 0 0 20px;
+  display: flex;
+  &__name{
+    font-weight: bold;
+    font-size: 24px;
+  }
+  &__followbox{
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 0 0 0 293px;
+    @include middle_located();
+    transition: background-color;
+  }
+  &__followbox:hover{
+    background-color: rgba(255, 0, 0, 0.3);
+    transition: 0.5s;
+  }
+  &__followerbox{
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin: 0 0 0 20px;
+    @include middle_located();
+    transition: background-color;
+  }
+  &__followerbox:hover{
+    background-color: rgba(0, 0, 255, 0.3);
+    transition: 0.5s;
+  }
+}
+.tweet-list__content__ID{
+  margin: 0 0 2px 20px;
+  font-size: 16px;
+  color: gray;
+}
+.tweet-list__content__introduction{
+  margin: 15px 20px 10px 20px;
+}
+.tweet-list__content__start{
+  margin: 0 20px;
+  font-size: 12px;
+  color: gray;
+  text-align: end;
+}
+.tweet-list__content__tablist{
+  margin-top: 20px;
+  @include middle_located();
+  &__tab{
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: solid 3px transparent;
+    transition: color;
+    transition: background-color;
+    transition: font-weight;
+  }
+  &__tab:hover{
+    color: #414d0b;
+    background-color: rgba(65, 77, 11, 0.3);
+    font-weight: bold;
+    transition: 0.5s;
+  }
+  &__tab.is_active{
+    border-bottom: solid 3px #414d0b;
+    color: #414d0b;
+    font-weight: bold;
+  }
+}
+.tweet-list__content__tabcontent.is_shown{
+  border-top: solid 1px #414d0b;
+  display: block;
+  width: 100%;
+  &__top{
+    color: #414d0b;
+    margin-top: 50px;
+    @include middle_located();
+  }
+  &__text{
+    color: #414d0b;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+.tweet-list__content__tabcontent{
+  display:none;
+  width: 100%;
+  &__top{
+    color: #414d0b;
+    margin-top: 50px;
+    @include middle_located();
+  }
+  &__text{
+    color: #414d0b;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
