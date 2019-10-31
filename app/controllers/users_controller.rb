@@ -6,4 +6,10 @@ class UsersController < ApplicationController
   def meter
   end
 
+  def rank
+  end
+
+  def make_friend
+  end
+  
 end

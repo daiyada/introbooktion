@@ -6,7 +6,7 @@
       .tweet-list__left__index__top
         Introbooktion
     .tweet-list__left__selection
-      = link_to "tweets_path", class: "tweet-list__left__selection__box" do
+      = link_to root_path, class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list
           = fa_icon "home"
         .tweet-list__left__selection__box__text
@@ -21,12 +21,12 @@
           = fa_icon "tachometer-alt"
         .tweet-list__left__selection__box__text
           読書メーター
-      .tweet-list__left__selection__box
+      = link_to "users/1/rank", class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list
           = fa_icon "medal"
         .tweet-list__left__selection__box__text
           ランキング
-      .tweet-list__left__selection__box
+      = link_to "users/1/make_friends", class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list
           = fa_icon "user-friends"
         .tweet-list__left__selection__box__text

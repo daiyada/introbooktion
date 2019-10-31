@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     member do
       get "meter" => "users#meter"
+      get "rank" => "users#rank"
+      get "make_friends" => "users#make_friends"
     end
   end
 end

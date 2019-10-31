@@ -17,14 +17,14 @@
         .tweet-list__left__selection__box__text
           プロフィール
       = link_to "/users/1/meter", class: "tweet-list__left__selection__box" do
-        .tweet-list__left__selection__box__list.is_active
+        .tweet-list__left__selection__box__list
           = fa_icon "tachometer-alt"
-        .tweet-list__left__selection__box__text.is_active
+        .tweet-list__left__selection__box__text
           読書メーター
       = link_to "/users/1/rank", class: "tweet-list__left__selection__box" do
-        .tweet-list__left__selection__box__list
+        .tweet-list__left__selection__box__list.is_active
           = fa_icon "medal"
-        .tweet-list__left__selection__box__text
+        .tweet-list__left__selection__box__text.is_active
           ランキング
       = link_to "/users/1/make_friends", class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list
