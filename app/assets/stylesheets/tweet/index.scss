@@ -105,14 +105,17 @@
     left: 27%;
     z-index: 2;
     border-right: solid 1px #414d0b;
+    overflow: auto;
     &__top{
-      margin-top: 20px;
-      padding: 0 0 10px 20px;
+      padding: 20px 0 10px 20px;
       font-size: 20px;
       font-weight: bold;
       border-bottom: solid 1px #414d0b;
+      box-sizing: border-box;
+      // position: fixed;
     }
     &__tweetbox{
+      // padding-top: 60px;
       @include middle_located();
       border-bottom: solid 1px #414d0b;
       &__image{
@@ -213,6 +216,160 @@
         }
       }
     }
+    &__timeline{
+      padding: 15px 20px 10px 0;
+      @include middle_located();
+      border-bottom: solid 1px #414d0b;
+      position: relative;
+      &__image{
+        height: 100%;
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        .tweet-user-icon{
+          height: 50px;
+          width: 50px;
+          object-fit: contain;
+          border-radius: 50%;
+          border: solid 1px #414d0b;
+          position: absolute;
+          top: 15px;
+        }
+      }
+      &__content{
+        width: 86%;
+        &__top{
+          @include both_end_located();
+          &__namebox{
+            display: flex;
+            align-items: center;
+            &__name{
+              font-weight: bold;
+              font-size: 18px;
+            }
+            &__ID{
+              color: gray;
+              margin-left: 5px;
+              font-size: 14px;
+            }
+            &__time{
+              color: gray;
+              margin-left: 15px;
+              font-size: 14px;
+            }
+          }
+        }
+        &__tweet{
+          margin-top: 10px;
+          line-height: 130%;
+          font-size: 14px;
+        }
+        &__impression{
+          margin-top: 10px;
+          font-size: 18px;
+        }
+        &__image{
+          margin-top: 10px;
+          .tweet-image{
+            border-radius: 30px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: 50% 0;
+          }
+        }
+        &__retweetbox{
+          width: 100%;
+          margin-top: 15px;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          border-radius: 20px;
+          border: solid 1px #414d0b;
+          &__top{
+            display: flex;
+            align-items: center;
+            &__image{
+              margin: 0px 10px 0 0;
+              .retweet-user-icon{
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+              }
+            }
+            &__name{
+              font-weight: bold;
+            }
+            &__ID{
+              color: gray;
+              font-size: 14px;
+              margin-left: 5px;
+            }
+            &__time{
+              color: gray;
+              font-size: 14px;
+              margin-left: 12px;
+            }
+          }
+        }
+        &__button{
+          margin: 10px 30px 0 30px;
+          @include both_end_located();
+          color: gray;
+          &__comment{
+            transition: color
+          }
+          &__comment:hover{
+            color: rgba(0, 0, 255, 1);
+            transition: 0.1s;
+          }
+          .far.fa-comment{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px;
+            transition: background-color;
+          }
+          .far.fa-comment:hover{
+            background-color: rgba(0, 0, 255, 0.4);
+            transition: 0.1s;
+          }
+          &__retweet{
+            transition: color
+          }
+          &__retweet:hover{
+            color: rgba(65, 77, 11, 1);
+            transition: 0.1s;
+          }
+          .fas.fa-retweet{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px 4px;
+            transition: background-color;
+          }
+          .fas.fa-retweet:hover{
+            background-color: rgba(0, 255, 0, 0.3);
+            transition: 0.1s;
+          }
+          &__heart{
+            transition: color
+          }
+          &__heart:hover{
+            color: rgba(255, 0, 0, 1);
+            transition: 0.1s;
+          }
+          .far.fa-heart{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px;
+            transition: background-color;
+          }
+          .far.fa-heart:hover{
+            background-color: rgba(255, 0, 0, 0.3);
+            transition: 0.1s;
+          }
+        }
+      }
+    }
   }
   &__right{
     width: 33%;
@@ -222,7 +379,6 @@
     background-image: linear-gradient(-45deg ,#414d0b, #003300), url(/book_image.jpg);
     &__index{
       margin: 20px 170px 0 60px;
-      height: 100%;
       &__top{
         width: 100%;
         padding: 5px 0 5px 45px;
@@ -314,9 +470,21 @@
           &__info{
             width: 50%;
             margin-left: 5px;
+            &__name{
+              white-space: nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              -moz-text-overflow:ellipsis;
+              -o-text-overflow:ellipsis;
+            }
             &__ID{
               color: gray;
               font-size: 14px;
+              white-space: nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              -moz-text-overflow:ellipsis;
+              -o-text-overflow:ellipsis;
             }
           }
           &__button{

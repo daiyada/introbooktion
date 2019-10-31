@@ -75,6 +75,77 @@
             = f.text_field :title, class: "title-box", placeholder: "タイトル"
           .tweet-list__content__tweetbox__text__content
             = f.text_field :content, class: "content-box", placeholder: "感想を書こう"
+      .tweet-list__content__timeline
+        .tweet-list__content__timeline__image
+          = image_tag "/そらジロー.jpg", class: "tweet-user-icon"
+        .tweet-list__content__timeline__content
+          .tweet-list__content__timeline__content__top
+            .tweet-list__content__timeline__content__top__namebox
+              .tweet-list__content__timeline__content__top__namebox__name
+                そらジロー
+              .tweet-list__content__timeline__content__top__namebox__ID
+                @sorajiroh
+              .tweet-list__content__timeline__content__top__namebox__time
+                3h
+            .tweet-list__content__timeline__content__top__chevron
+              = fa_icon "chevron-down"
+          .tweet-list__content__timeline__content__impression
+            これ読んでみたけど確かにどこで情報得たんだってぐらい詳しく書いてあった。みうらじゅんさん恐るべし。。。
+          .tweet-list__content__timeline__content__retweetbox
+            .tweet-list__content__timeline__content__retweetbox__top
+              .tweet-list__content__timeline__content__retweetbox__top__image
+                = image_tag "/チーバくん.jpg", class: "retweet-user-icon"
+              .tweet-list__content__timeline__content__retweetbox__top__name
+                チーバくん
+              .tweet-list__content__timeline__content__retweetbox__top__ID
+                @chibakun
+              .tweet-list__content__timeline__content__retweetbox__top__time
+                8h
+            .tweet-list__content__timeline__content__retweetbox__impression
+              全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
+          .tweet-list__content__timeline__content__button
+            .tweet-list__content__timeline__content__button__comment
+              = far_icon "comment"
+              2
+            .tweet-list__content__timeline__content__button__retweet
+              = fa_icon "retweet"
+              0
+            .tweet-list__content__timeline__content__button__heart
+              = far_icon "heart"
+              0
+      .tweet-list__content__timeline
+        .tweet-list__content__timeline__image
+          = image_tag "/チーバくん.jpg", class: "tweet-user-icon"
+        .tweet-list__content__timeline__content
+          .tweet-list__content__timeline__content__top
+            .tweet-list__content__timeline__content__top__namebox
+              .tweet-list__content__timeline__content__top__namebox__name
+                チーバくん
+              .tweet-list__content__timeline__content__top__namebox__ID
+                @chibakun
+              .tweet-list__content__timeline__content__top__namebox__time
+                8h
+            .tweet-list__content__timeline__content__top__chevron
+              = fa_icon "chevron-down"
+          .tweet-list__content__timeline__content__tweet
+            .tweet-list__content__timeline__content__tweet__title
+              タイトル：　全日本ゆるキャラ公式ガイドブック
+            .tweet-list__content__timeline__content__tweet__category
+              ジャンル：　旅行・紀行
+          .tweet-list__content__timeline__content__impression
+            全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
+          .tweet-list__content__timeline__content__image
+            = image_tag "/ゆるキャラ.jpg", class: "tweet-image"   #ここ配列から取り出す漢字にする
+          .tweet-list__content__timeline__content__button
+            .tweet-list__content__timeline__content__button__comment
+              = far_icon "comment"
+              12
+            .tweet-list__content__timeline__content__button__retweet
+              = fa_icon "retweet"
+              5
+            .tweet-list__content__timeline__content__button__heart
+              = far_icon "heart"
+              100
   .tweet-list__right
     .tweet-list__right__index
       %input.tweet-list__right__index__top{placeholder: "検索"}
