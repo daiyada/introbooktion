@@ -6,15 +6,15 @@
       .tweet-list__left__index__top
         Introbooktion
     .tweet-list__left__selection
+      = link_to tweets_path, class: "tweet-list__left__selection__box" do
+        .tweet-list__left__selection__box__list
+          = fa_icon "home"
+        .tweet-list__left__selection__box__text
+          ホーム
       .tweet-list__left__selection__box
         .tweet-list__left__selection__box__list.is_active
-          = fa_icon "home"
-        .tweet-list__left__selection__box__text.is_active
-          ホーム
-      = link_to users_path, class: "tweet-list__left__selection__box" do
-        .tweet-list__left__selection__box__list
           = fa_icon "users"
-        .tweet-list__left__selection__box__text
+        .tweet-list__left__selection__box__text.is_active
           プロフィール
       .tweet-list__left__selection__box
         .tweet-list__left__selection__box__list
@@ -36,55 +36,50 @@
   .tweet-list__center
   .tweet-list__color
   .tweet-list__content
-    = form_with url: tweets_path, method: :post do |f|
-      .tweet-list__content__top
-        ホーム
-      .tweet-list__content__tweetbox
-        .tweet-list__content__tweetbox__image
-          = image_tag "/nonimage-icon.jpeg", class: "image-icon"
-        .tweet-list__content__tweetbox__text
-          .tweet-list__content__tweetbox__text__top
-            .tweet-list__content__tweetbox__text__top__category
-              = f.select :category,{},{},{class: "category-box"} do
-                %option{value: "", class: "select-default"}カテゴリー
-                %option{value: "文学・小説・評論"} 文学・小説・評論
-                %option{value: "ノンフィクション"} ノンフィクション
-                %option{value: "ビジネス・経済"} ビジネス・経済
-                %option{value: "歴史・地理"} 歴史・地理
-                %option{value: "政治・経済"} 政治・経済
-                %option{value: "芸能・エンタメ"} 芸能・エンタメ
-                %option{value: "芸術・美術"} 芸術・美術
-                %option{value: "人文・思想・宗教"} 人文・思想・宗教
-                %option{value: "暮らし・健康・料理"} 暮らし・健康・料理
-                %option{value: "技術・工学"} 技術・工学
-                %option{value: "趣味・実用"} 趣味・実用
-                %option{value: "教育・自己啓発"} 教育・自己啓発
-                %option{value: "スポーツ・アウトドア"} スポーツ・アウトドア
-                %option{value: "事典・年鑑・ことば"} 事典・年鑑・ことば
-                %option{value: "音楽"} 音楽
-                %option{value: "旅行・紀行"} 旅行・紀行
-                %option{value: "絵本・児童書"} 絵本・児童書
-                %option{value: "コミックス"} コミックス
-                %option{value: "産業"} 産業
-            .tweet-list__content__tweetbox__text__top__button
-              .tweet-list__content__tweetbox__text__top__button__left
-                = fa_icon "images"
-              .tweet-list__content__tweetbox__text__top__button__right
-                = f.submit :"投稿する", class:"post-button"
-          .tweet-list__content__tweetbox__text__title
-            = f.text_field :title, class: "title-box", placeholder: "タイトル"
-          .tweet-list__content__tweetbox__text__content
-            = f.text_field :content, class: "content-box", placeholder: "感想を書こう"
+    .tweet-list__content__top
+      プロフィール
+    = image_tag "https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?12295559", class: "tweet-list__content__backimage"
+    .tweet-list__content__edit
+      プロフィール編集
+    = image_tag "/nonimage-icon.jpeg", class: "tweet-list__content__icon"
+    .tweet-list__content__explanation
+      .tweet-list__content__explanation__name
+        dbuck
+      .tweet-list__content__explanation__followbox
+        .tweet-list__content__explanation__followbox__text
+          フォロー：
+        .tweet-list__content__explanation__followbox__number
+          120
+      .tweet-list__content__explanation__followerbox
+        .tweet-list__content__explanation__followbox__text
+          フォロワー：
+        .tweet-list__content__explanation__followbox__number
+          100
+    .tweet-list__content__ID
+      @dbuck
+    .tweet-list__content__introduction
+      introbooktionマスコットキャラクターのdbuck（ダック）です。読んだ本の感想を積極的に投稿していこうと思います。よろしくお願いします。
+      .tweet-list__content__number__follower
+    .tweet-list__content__start
+      dbuckさんは2019年10月31日からintrobooktionを始めています。
+    .tweet-list__content__tablist
+      .tweet-list__content__tablist__tab.is_active
+        投稿
+      .tweet-list__content__tablist__tab
+        写真
+      .tweet-list__content__tablist__tab
+        いいね
+    .tweet-list__content__tabcontent.is_shown
       .tweet-list__content__timeline
         .tweet-list__content__timeline__image
-          = image_tag "/そらジロー.jpg", class: "tweet-user-icon"
+          = image_tag "/nonimage-icon.jpeg", class: "tweet-user-icon"
         .tweet-list__content__timeline__content
           .tweet-list__content__timeline__content__top
             .tweet-list__content__timeline__content__top__namebox
               .tweet-list__content__timeline__content__top__namebox__name
-                そらジロー
+                dbuck
               .tweet-list__content__timeline__content__top__namebox__ID
-                @sorajiroh
+                @dbuck
               .tweet-list__content__timeline__content__top__namebox__time
                 3h
             .tweet-list__content__timeline__content__top__chevron
@@ -115,37 +110,59 @@
               0
       .tweet-list__content__timeline
         .tweet-list__content__timeline__image
-          = image_tag "/チーバくん.jpg", class: "tweet-user-icon"
+          = image_tag "/nonimage-icon.jpeg", class: "tweet-user-icon"
         .tweet-list__content__timeline__content
           .tweet-list__content__timeline__content__top
             .tweet-list__content__timeline__content__top__namebox
               .tweet-list__content__timeline__content__top__namebox__name
-                チーバくん
+                dbuck
               .tweet-list__content__timeline__content__top__namebox__ID
-                @chibakun
+                @dbuck
               .tweet-list__content__timeline__content__top__namebox__time
-                8h
+                3h
             .tweet-list__content__timeline__content__top__chevron
               = fa_icon "chevron-down"
-          .tweet-list__content__timeline__content__tweet
-            .tweet-list__content__timeline__content__tweet__title
-              タイトル：　全日本ゆるキャラ公式ガイドブック
-            .tweet-list__content__timeline__content__tweet__category
-              ジャンル：　旅行・紀行
           .tweet-list__content__timeline__content__impression
-            全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
-          .tweet-list__content__timeline__content__image
-            = image_tag "/ゆるキャラ.jpg", class: "tweet-image"   #ここ配列から取り出す漢字にする
+            これ読んでみたけど確かにどこで情報得たんだってぐらい詳しく書いてあった。みうらじゅんさん恐るべし。。。
+          .tweet-list__content__timeline__content__retweetbox
+            .tweet-list__content__timeline__content__retweetbox__top
+              .tweet-list__content__timeline__content__retweetbox__top__image
+                = image_tag "/チーバくん.jpg", class: "retweet-user-icon"
+              .tweet-list__content__timeline__content__retweetbox__top__name
+                チーバくん
+              .tweet-list__content__timeline__content__retweetbox__top__ID
+                @chibakun
+              .tweet-list__content__timeline__content__retweetbox__top__time
+                8h
+            .tweet-list__content__timeline__content__retweetbox__impression
+              全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
           .tweet-list__content__timeline__content__button
             .tweet-list__content__timeline__content__button__comment
               = far_icon "comment"
-              12
+              2
             .tweet-list__content__timeline__content__button__retweet
               = fa_icon "retweet"
-              5
+              0
             .tweet-list__content__timeline__content__button__heart
               = far_icon "heart"
-              100
+              0
+      -# .tweet-list__content__tabcontent__top
+      -#   .tweet-list__content__tabcontent__top__icon
+      -#     = render "icon/icon3"
+      -# .tweet-list__content__tabcontent__text
+      -#   まだ投稿はありません
+    .tweet-list__content__tabcontent
+      .tweet-list__content__tabcontent__top
+        .tweet-list__content__tabcontent__top__icon
+          = render "icon/icon3"
+      .tweet-list__content__tabcontent__text
+        まだ写真はありません
+    .tweet-list__content__tabcontent
+      .tweet-list__content__tabcontent__top
+        .tweet-list__content__tabcontent__top__icon
+          = render "icon/icon3"
+      .tweet-list__content__tabcontent__text
+        まだいいねはありません
   .tweet-list__right
     .tweet-list__right__index
       %input.tweet-list__right__index__top{placeholder: "検索"}
@@ -223,4 +240,3 @@
           .tweet-list__right__index__recommend-user__morelist__text
             さらに表示する
             = fa_icon "chevron-down"
-      

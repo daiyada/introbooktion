@@ -32,6 +32,7 @@
         border-radius: 30px;
         padding: 5px;
         transition: background-color;
+        text-decoration: none;
         &__list{
           margin: auto 0 auto 15px;
           color: white;
@@ -86,8 +87,8 @@
     height: 100%;
     background-image: url(/book_image.jpg);
     background-size: cover;
-    filter: saturate(80%);
-    opacity: 0.2;
+    filter: saturate(60%);
+    opacity: 0.1;
     position: relative;
   }
   &__color{
@@ -104,7 +105,6 @@
     position: absolute;
     left: 27%;
     z-index: 2;
-    border-right: solid 1px #414d0b;
     overflow: auto;
     &__top{
       padding: 20px 0 10px 20px;
@@ -112,10 +112,10 @@
       font-weight: bold;
       border-bottom: solid 1px #414d0b;
       box-sizing: border-box;
-      // position: fixed;
+      // position: fixed; topをヘッダーとして固定するかどうか・・・
     }
     &__tweetbox{
-      // padding-top: 60px;
+      // padding-top: 60px; topをヘッダーとして固定するかどうか・・・
       @include middle_located();
       border-bottom: solid 1px #414d0b;
       &__image{
@@ -506,7 +506,6 @@
           height: 35px;
           @include middle_located();
           transition: color;
-          cursor: pointer;
           .fas.fa-chevron-down{
             position: relative;
           }
@@ -514,7 +513,6 @@
         &__morelist:hover{
           color: #414d0b;
           .fas.fa-chevron-down{
-            position: relative;
             top: 2px;
           }
         }
