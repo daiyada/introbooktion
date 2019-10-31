@@ -506,7 +506,6 @@
           height: 35px;
           @include middle_located();
           transition: color;
-          cursor: pointer;
           .fas.fa-chevron-down{
             position: relative;
           }
@@ -514,7 +513,6 @@
         &__morelist:hover{
           color: #414d0b;
           .fas.fa-chevron-down{
-            position: relative;
             top: 2px;
           }
         }
