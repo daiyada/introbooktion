@@ -6,7 +6,7 @@
       .tweet-list__left__index__top
         Introbooktion
     .tweet-list__left__selection
-      .tweet-list__left__selection__box
+      = link_to tweets_path, class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list.is_active
           = fa_icon "home"
         .tweet-list__left__selection__box__text.is_active
@@ -16,7 +16,7 @@
           = fa_icon "users"
         .tweet-list__left__selection__box__text
           プロフィール
-      .tweet-list__left__selection__box
+      = link_to "/users/1/meter", class: "tweet-list__left__selection__box" do
         .tweet-list__left__selection__box__list
           = fa_icon "tachometer-alt"
         .tweet-list__left__selection__box__text
