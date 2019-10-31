@@ -1,0 +1,524 @@
+.tweet-list{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  &__left{
+    width: 27%;
+    height: 100%;
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-image: linear-gradient(-45deg ,#003300, #414d0b), url(/book_image.jpg);
+    &__index{
+      margin-left: 170px;
+      display: flex;
+      &__top{
+        margin: 20px 0 0 10px;
+        font-size: 26px;
+        color: white;
+        font-weight: bolder;
+      }
+      &__icon{
+        margin-top: 10px;
+      }
+    }
+    &__selection{
+      margin-left: 170px;
+      margin-top: 30px;
+      &__box{
+        pointer-events : none;
+        display: inline-flex;
+        width: auto;
+        margin-bottom: 15px;
+        border-radius: 30px;
+        padding: 5px;
+        transition: background-color;
+        &__list{
+          margin: auto 0 auto 15px;
+          color: white;
+          font-size: 20px;
+          transition: color;
+        }
+        &__list.is_active{
+          font-weight: bold;
+          color:#C7D1FF;
+        }
+        &__text{
+          color: white;
+          font-size: 20px;
+          margin: 0 15px;
+          transition: color;
+          pointer-events : auto;
+        }
+        &__text.is_active{
+          font-weight: bold;
+          color:#C7D1FF;
+        }
+        &__text:hover{
+          color:#C7D1FF;
+          font-weight: bold;
+        }
+      }
+      &__box:hover{
+        background-color:rgba(92, 141, 204, 0.3);
+      }
+      &__box:hover .tweet-list__left__selection__box__list{
+        color:#C7D1FF;
+        font-weight: bold;
+      }
+    }
+    &__button{
+      margin: 20px 0 0 185px;
+      text-align: center;
+      line-height: 40px;
+      background-color: #588BCC;
+      border: solid 1px #588BCC;
+      width: 220px;
+      border-radius: 50px;
+      color: white;
+      transition: background-color;
+    }
+    &__button:hover{
+      background-color: #588BFF;
+    }
+  }
+  &__center{
+    width: 40%;
+    height: 100%;
+    background-image: url(/book_image.jpg);
+    background-size: cover;
+    filter: saturate(80%);
+    opacity: 0.2;
+    position: relative;
+  }
+  &__color{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 27%;
+    background-color: rgba(227, 255, 125, 0.2);
+    z-index: 1;
+  }
+  &__content{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 27%;
+    z-index: 2;
+    border-right: solid 1px #414d0b;
+    overflow: auto;
+    &__top{
+      padding: 20px 0 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: solid 1px #414d0b;
+      box-sizing: border-box;
+      // position: fixed;
+    }
+    &__tweetbox{
+      // padding-top: 60px;
+      @include middle_located();
+      border-bottom: solid 1px #414d0b;
+      &__image{
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        .image-icon{
+          height: 50px;
+          width: 50px;
+          object-fit: contain;
+          border-radius: 50%;
+          border: solid 1px #414d0b;
+        }
+      }
+      &__text{
+        margin: 15px 20px 15px 0;
+        width: 86%;
+        &__top{
+          @include middle_located();
+          &__category{
+            width:55%;
+            .category-box{
+              border: none;
+              height: 30px;
+              width: 100%;
+              border-radius: 0px;
+              border-bottom: solid 1px #414d0b;
+              background-color: transparent;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              .select-default{
+                display: none;
+                color: gray;
+              }
+            }
+            .category-box:focus{
+              border-color: none;
+              outline: none;
+            }
+          }
+          &__button{
+            width: 45%;
+            display: flex;
+            justify-content: flex-end;
+            &__left{
+              margin: auto 25px auto 0;
+              .fa-images{
+                color: #414d0b;
+                font-size: 22px;
+                transition: color
+              }
+              .fa-images:hover{
+                color: #606B2F;
+              }
+            }
+            &__right{
+              .post-button{
+                text-align: center;
+                line-height: 30px;
+                background-color: #414d0b;
+                border: solid 1px #414d0b;
+                width: 180px;
+                border-radius: 30px;
+                color: white;
+                transition: background-color;
+                transition: border
+              }
+              .post-button:hover{
+                background-color: #606B2F;
+                border: solid 1px #606B2F;
+              }
+            }
+          }
+        }
+        .title-box{
+          border: none;
+          height: 30px;
+          width: 100%;
+          border-bottom: solid 1px #414d0b;
+          background-color: transparent;
+        }
+        .title-box:focus{
+          border-color: none;
+          outline: none;
+        }
+        .content-box{
+          border: none;
+          height: 30px;
+          width: 100%;
+          border-bottom: solid 1px #414d0b;
+          background-color: transparent;
+        }
+        .content-box:focus{
+          border-color: none;
+          outline: none;
+        }
+      }
+    }
+    &__timeline{
+      padding: 15px 20px 10px 0;
+      @include middle_located();
+      border-bottom: solid 1px #414d0b;
+      position: relative;
+      &__image{
+        height: 100%;
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        .tweet-user-icon{
+          height: 50px;
+          width: 50px;
+          object-fit: contain;
+          border-radius: 50%;
+          border: solid 1px #414d0b;
+          position: absolute;
+          top: 15px;
+        }
+      }
+      &__content{
+        width: 86%;
+        &__top{
+          @include both_end_located();
+          &__namebox{
+            display: flex;
+            align-items: center;
+            &__name{
+              font-weight: bold;
+              font-size: 18px;
+            }
+            &__ID{
+              color: gray;
+              margin-left: 5px;
+              font-size: 14px;
+            }
+            &__time{
+              color: gray;
+              margin-left: 15px;
+              font-size: 14px;
+            }
+          }
+        }
+        &__tweet{
+          margin-top: 10px;
+          line-height: 130%;
+          font-size: 14px;
+        }
+        &__impression{
+          margin-top: 10px;
+          font-size: 18px;
+        }
+        &__image{
+          margin-top: 10px;
+          .tweet-image{
+            border-radius: 30px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: 50% 0;
+          }
+        }
+        &__retweetbox{
+          width: 100%;
+          margin-top: 15px;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          border-radius: 20px;
+          border: solid 1px #414d0b;
+          &__top{
+            display: flex;
+            align-items: center;
+            &__image{
+              margin: 0px 10px 0 0;
+              .retweet-user-icon{
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+              }
+            }
+            &__name{
+              font-weight: bold;
+            }
+            &__ID{
+              color: gray;
+              font-size: 14px;
+              margin-left: 5px;
+            }
+            &__time{
+              color: gray;
+              font-size: 14px;
+              margin-left: 12px;
+            }
+          }
+        }
+        &__button{
+          margin: 10px 30px 0 30px;
+          @include both_end_located();
+          color: gray;
+          &__comment{
+            transition: color
+          }
+          &__comment:hover{
+            color: rgba(0, 0, 255, 1);
+            transition: 0.1s;
+          }
+          .far.fa-comment{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px;
+            transition: background-color;
+          }
+          .far.fa-comment:hover{
+            background-color: rgba(0, 0, 255, 0.4);
+            transition: 0.1s;
+          }
+          &__retweet{
+            transition: color
+          }
+          &__retweet:hover{
+            color: rgba(65, 77, 11, 1);
+            transition: 0.1s;
+          }
+          .fas.fa-retweet{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px 4px;
+            transition: background-color;
+          }
+          .fas.fa-retweet:hover{
+            background-color: rgba(0, 255, 0, 0.3);
+            transition: 0.1s;
+          }
+          &__heart{
+            transition: color
+          }
+          &__heart:hover{
+            color: rgba(255, 0, 0, 1);
+            transition: 0.1s;
+          }
+          .far.fa-heart{
+            margin-right: 5px;
+            border-radius: 50%;
+            padding: 7px;
+            transition: background-color;
+          }
+          .far.fa-heart:hover{
+            background-color: rgba(255, 0, 0, 0.3);
+            transition: 0.1s;
+          }
+        }
+      }
+    }
+  }
+  &__right{
+    width: 33%;
+    height: 100%;
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-image: linear-gradient(-45deg ,#414d0b, #003300), url(/book_image.jpg);
+    &__index{
+      margin: 20px 170px 0 60px;
+      &__top{
+        width: 100%;
+        padding: 5px 0 5px 45px;
+        box-sizing: border-box;
+        line-height: 30px;
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        background-color: rgba(245, 248, 250, 0.9);
+        &__search-icon{
+          position: absolute;
+          top: 32px;
+          right: 27.5%;
+          color: gray;
+        }
+      }
+      &__top:focus{
+        border-color: none;
+        outline: none;
+      }
+      &__have-read{
+        width: 100%;
+        border-radius: 10px;
+        background-color:rgba(245, 248, 250, 0.9);
+        margin-top: 30px;
+        &__top{
+          padding: 5px 10px;
+          font-weight: bold;
+        }
+        &__list{
+          border-top: solid 1px #414d0b;
+          @include middle_located();
+          min-height: 80px;
+          &__image{
+            width: 20%;
+            @include middle_located();
+            .have-read-book{
+              max-width: 50px;
+              max-height: 50px;
+              object-fit: contain;
+              border: solid 1px #414d0b;
+            }
+          }
+          &__info{
+            width: 80%;
+            padding: 0 15px 0 0;
+            &__top{
+              @include both_end_located();
+              align-items: center;
+              &__category{
+                color: gray;
+                font-size: 12px;
+              }
+              &__date{
+                color: gray;
+                font-size: 12px;
+              }
+            }
+            &__title{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &__recommend-user{
+        width: 100%;
+        border-radius: 10px;
+        background-color:rgba(245, 248, 250, 0.9);
+        margin-top: 30px;
+        &__top{
+          padding: 5px 10px;
+          font-weight: bold;
+        }
+        &__list{
+          border-top: solid 1px #414d0b;
+          min-height: 60px;
+          padding: 0 15px 0 0;
+          @include middle_located();
+          &__image{
+            width: 20%;
+            @include middle_located();
+            .recommend-user{
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              border: solid 1px #414d0b;
+            }
+          }
+          &__info{
+            width: 50%;
+            margin-left: 5px;
+            &__name{
+              white-space: nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              -moz-text-overflow:ellipsis;
+              -o-text-overflow:ellipsis;
+            }
+            &__ID{
+              color: gray;
+              font-size: 14px;
+              white-space: nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              -moz-text-overflow:ellipsis;
+              -o-text-overflow:ellipsis;
+            }
+          }
+          &__button{
+            width: 30%;
+            text-align: center;
+            border: solid 1px #588BCC;
+            background-color: #588BCC;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 20px;
+            transition: background-color;
+          }
+          &__button:hover{
+            background-color: #588BFF;
+          }
+        }
+        &__morelist{
+          border-top: solid 1px #414d0b;
+          height: 35px;
+          @include middle_located();
+          transition: color;
+          cursor: pointer;
+          .fas.fa-chevron-down{
+            position: relative;
+          }
+        }
+        &__morelist:hover{
+          color: #414d0b;
+          .fas.fa-chevron-down{
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+}

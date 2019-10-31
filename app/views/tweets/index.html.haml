@@ -1,1 +1,226 @@
-hello world
+.tweet-list
+  .tweet-list__left
+    .tweet-list__left__index
+      .tweet-list__left__index__icon
+        = render "icon/icon"
+      .tweet-list__left__index__top
+        Introbooktion
+    .tweet-list__left__selection
+      .tweet-list__left__selection__box
+        .tweet-list__left__selection__box__list.is_active
+          = fa_icon "home"
+        .tweet-list__left__selection__box__text.is_active
+          ホーム
+      .tweet-list__left__selection__box
+        .tweet-list__left__selection__box__list
+          = fa_icon "users"
+        .tweet-list__left__selection__box__text
+          プロフィール
+      .tweet-list__left__selection__box
+        .tweet-list__left__selection__box__list
+          = fa_icon "tachometer-alt"
+        .tweet-list__left__selection__box__text
+          読書メーター
+      .tweet-list__left__selection__box
+        .tweet-list__left__selection__box__list
+          = fa_icon "medal"
+        .tweet-list__left__selection__box__text
+          ランキング
+      .tweet-list__left__selection__box
+        .tweet-list__left__selection__box__list
+          = fa_icon "user-friends"
+        .tweet-list__left__selection__box__text
+          友達を探す
+    .tweet-list__left__button
+      APIを使って投稿する
+  .tweet-list__center
+  .tweet-list__color
+  .tweet-list__content
+    = form_with url: tweets_path, method: :post do |f|
+      .tweet-list__content__top
+        ホーム
+      .tweet-list__content__tweetbox
+        .tweet-list__content__tweetbox__image
+          = image_tag "/nonimage-icon.jpeg", class: "image-icon"
+        .tweet-list__content__tweetbox__text
+          .tweet-list__content__tweetbox__text__top
+            .tweet-list__content__tweetbox__text__top__category
+              = f.select :category,{},{},{class: "category-box"} do
+                %option{value: "", class: "select-default"}カテゴリー
+                %option{value: "文学・小説・評論"} 文学・小説・評論
+                %option{value: "ノンフィクション"} ノンフィクション
+                %option{value: "ビジネス・経済"} ビジネス・経済
+                %option{value: "歴史・地理"} 歴史・地理
+                %option{value: "政治・経済"} 政治・経済
+                %option{value: "芸能・エンタメ"} 芸能・エンタメ
+                %option{value: "芸術・美術"} 芸術・美術
+                %option{value: "人文・思想・宗教"} 人文・思想・宗教
+                %option{value: "暮らし・健康・料理"} 暮らし・健康・料理
+                %option{value: "技術・工学"} 技術・工学
+                %option{value: "趣味・実用"} 趣味・実用
+                %option{value: "教育・自己啓発"} 教育・自己啓発
+                %option{value: "スポーツ・アウトドア"} スポーツ・アウトドア
+                %option{value: "事典・年鑑・ことば"} 事典・年鑑・ことば
+                %option{value: "音楽"} 音楽
+                %option{value: "旅行・紀行"} 旅行・紀行
+                %option{value: "絵本・児童書"} 絵本・児童書
+                %option{value: "コミックス"} コミックス
+                %option{value: "産業"} 産業
+            .tweet-list__content__tweetbox__text__top__button
+              .tweet-list__content__tweetbox__text__top__button__left
+                = fa_icon "images"
+              .tweet-list__content__tweetbox__text__top__button__right
+                = f.submit :"投稿する", class:"post-button"
+          .tweet-list__content__tweetbox__text__title
+            = f.text_field :title, class: "title-box", placeholder: "タイトル"
+          .tweet-list__content__tweetbox__text__content
+            = f.text_field :content, class: "content-box", placeholder: "感想を書こう"
+      .tweet-list__content__timeline
+        .tweet-list__content__timeline__image
+          = image_tag "/そらジロー.jpg", class: "tweet-user-icon"
+        .tweet-list__content__timeline__content
+          .tweet-list__content__timeline__content__top
+            .tweet-list__content__timeline__content__top__namebox
+              .tweet-list__content__timeline__content__top__namebox__name
+                そらジロー
+              .tweet-list__content__timeline__content__top__namebox__ID
+                @sorajiroh
+              .tweet-list__content__timeline__content__top__namebox__time
+                3h
+            .tweet-list__content__timeline__content__top__chevron
+              = fa_icon "chevron-down"
+          .tweet-list__content__timeline__content__impression
+            これ読んでみたけど確かにどこで情報得たんだってぐらい詳しく書いてあった。みうらじゅんさん恐るべし。。。
+          .tweet-list__content__timeline__content__retweetbox
+            .tweet-list__content__timeline__content__retweetbox__top
+              .tweet-list__content__timeline__content__retweetbox__top__image
+                = image_tag "/チーバくん.jpg", class: "retweet-user-icon"
+              .tweet-list__content__timeline__content__retweetbox__top__name
+                チーバくん
+              .tweet-list__content__timeline__content__retweetbox__top__ID
+                @chibakun
+              .tweet-list__content__timeline__content__retweetbox__top__time
+                8h
+            .tweet-list__content__timeline__content__retweetbox__impression
+              全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
+          .tweet-list__content__timeline__content__button
+            .tweet-list__content__timeline__content__button__comment
+              = far_icon "comment"
+              2
+            .tweet-list__content__timeline__content__button__retweet
+              = fa_icon "retweet"
+              0
+            .tweet-list__content__timeline__content__button__heart
+              = far_icon "heart"
+              0
+      .tweet-list__content__timeline
+        .tweet-list__content__timeline__image
+          = image_tag "/チーバくん.jpg", class: "tweet-user-icon"
+        .tweet-list__content__timeline__content
+          .tweet-list__content__timeline__content__top
+            .tweet-list__content__timeline__content__top__namebox
+              .tweet-list__content__timeline__content__top__namebox__name
+                チーバくん
+              .tweet-list__content__timeline__content__top__namebox__ID
+                @chibakun
+              .tweet-list__content__timeline__content__top__namebox__time
+                8h
+            .tweet-list__content__timeline__content__top__chevron
+              = fa_icon "chevron-down"
+          .tweet-list__content__timeline__content__tweet
+            .tweet-list__content__timeline__content__tweet__title
+              タイトル：　全日本ゆるキャラ公式ガイドブック
+            .tweet-list__content__timeline__content__tweet__category
+              ジャンル：　旅行・紀行
+          .tweet-list__content__timeline__content__impression
+            全国のゆるキャラについて詳細に書かれている本。自分のことも「自分より詳しいのでは？」と思うぐらい詳細に記載されていた。名著である。
+          .tweet-list__content__timeline__content__image
+            = image_tag "/ゆるキャラ.jpg", class: "tweet-image"   #ここ配列から取り出す漢字にする
+          .tweet-list__content__timeline__content__button
+            .tweet-list__content__timeline__content__button__comment
+              = far_icon "comment"
+              12
+            .tweet-list__content__timeline__content__button__retweet
+              = fa_icon "retweet"
+              5
+            .tweet-list__content__timeline__content__button__heart
+              = far_icon "heart"
+              100
+  .tweet-list__right
+    .tweet-list__right__index
+      %input.tweet-list__right__index__top{placeholder: "検索"}
+        = fa_icon "search", class: "tweet-list__right__index__top__search-icon"
+      .tweet-list__right__index__have-read
+        .tweet-list__right__index__have-read__top
+          直近読んだ本
+        .tweet-list__right__index__have-read__list
+          .tweet-list__right__index__have-read__list__image
+            = image_tag "/ゼロ秒思考.jpg", class: "have-read-book"
+          .tweet-list__right__index__have-read__list__info
+            .tweet-list__right__index__have-read__list__info__top
+              .tweet-list__right__index__have-read__list__info__top__category
+                ビジネス・経済
+              .tweet-list__right__index__have-read__list__info__top__date
+                2019/7/31
+            .tweet-list__right__index__have-read__list__info__title
+              ゼロ秒思考 頭が良くなる世界一シンプルなトレーニング
+        .tweet-list__right__index__have-read__list
+          .tweet-list__right__index__have-read__list__image
+            = image_tag "/夢をかなえるゾウ.jpg", class: "have-read-book"
+          .tweet-list__right__index__have-read__list__info
+            .tweet-list__right__index__have-read__list__info__top
+              .tweet-list__right__index__have-read__list__info__top__category
+                ビジネス・経済
+              .tweet-list__right__index__have-read__list__info__top__date
+                2019/4/26
+            .tweet-list__right__index__have-read__list__info__title
+              夢をかなえるゾウ
+        .tweet-list__right__index__have-read__list
+          .tweet-list__right__index__have-read__list__image
+            = image_tag "/竜馬がゆく.jpg", class: "have-read-book"
+          .tweet-list__right__index__have-read__list__info
+            .tweet-list__right__index__have-read__list__info__top
+              .tweet-list__right__index__have-read__list__info__top__category
+                歴史・地理
+              .tweet-list__right__index__have-read__list__info__top__date
+                2019/3/13
+            .tweet-list__right__index__have-read__list__info__title
+              竜馬がゆく(1)
+      .tweet-list__right__index__recommend-user
+        .tweet-list__right__index__recommend-user__top
+          オススメユーザー
+        .tweet-list__right__index__recommend-user__list
+          .tweet-list__right__index__recommend-user__list__image
+            = image_tag "/そらジロー.jpg", class: "recommend-user"
+          .tweet-list__right__index__recommend-user__list__info
+            .tweet-list__right__index__recommend-user__list__info__name
+              そらジロー
+            .tweet-list__right__index__recommend-user__list__info__ID
+              @soraziroh
+          .tweet-list__right__index__recommend-user__list__button
+            フォロー
+        .tweet-list__right__index__recommend-user__list
+          .tweet-list__right__index__recommend-user__list__image
+            = image_tag "/ずーしーほっきー.jpeg", class: "recommend-user"
+          .tweet-list__right__index__recommend-user__list__info
+            .tweet-list__right__index__recommend-user__list__info__name
+              ずーしーほっきー
+            .tweet-list__right__index__recommend-user__list__info__ID
+              @zushihokki
+          .tweet-list__right__index__recommend-user__list__button
+            フォロー
+        .tweet-list__right__index__recommend-user__list
+          .tweet-list__right__index__recommend-user__list__image
+            = image_tag "/チーバくん.jpg", class: "recommend-user"
+          .tweet-list__right__index__recommend-user__list__info
+            .tweet-list__right__index__recommend-user__list__info__name
+              チーバくん
+            .tweet-list__right__index__recommend-user__list__info__ID
+              @chibakun
+          .tweet-list__right__index__recommend-user__list__button
+            フォロー
+        .tweet-list__right__index__recommend-user__morelist
+          .tweet-list__right__index__recommend-user__morelist__text
+            さらに表示する
+            = fa_icon "chevron-down"
+      

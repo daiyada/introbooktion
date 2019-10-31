@@ -34,6 +34,7 @@
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|title|string|null: false|
 |content|string||
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
