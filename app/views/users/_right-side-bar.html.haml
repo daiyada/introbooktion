@@ -1,0 +1,77 @@
+.tweet-list__right
+  .tweet-list__right__index
+    %input.tweet-list__right__index__top{placeholder: "検索"}
+      = fa_icon "search", class: "tweet-list__right__index__top__search-icon"
+    .tweet-list__right__index__have-read
+      .tweet-list__right__index__have-read__top
+        直近読んだ本
+      .tweet-list__right__index__have-read__list
+        .tweet-list__right__index__have-read__list__image
+          = image_tag "/ゼロ秒思考.jpg", class: "have-read-book"
+        .tweet-list__right__index__have-read__list__info
+          .tweet-list__right__index__have-read__list__info__top
+            .tweet-list__right__index__have-read__list__info__top__category
+              ビジネス・経済
+            .tweet-list__right__index__have-read__list__info__top__date
+              2019/7/31
+          .tweet-list__right__index__have-read__list__info__title
+            ゼロ秒思考 頭が良くなる世界一シンプルなトレーニング
+      .tweet-list__right__index__have-read__list
+        .tweet-list__right__index__have-read__list__image
+          = image_tag "/夢をかなえるゾウ.jpg", class: "have-read-book"
+        .tweet-list__right__index__have-read__list__info
+          .tweet-list__right__index__have-read__list__info__top
+            .tweet-list__right__index__have-read__list__info__top__category
+              ビジネス・経済
+            .tweet-list__right__index__have-read__list__info__top__date
+              2019/4/26
+          .tweet-list__right__index__have-read__list__info__title
+            夢をかなえるゾウ
+      .tweet-list__right__index__have-read__list
+        .tweet-list__right__index__have-read__list__image
+          = image_tag "/竜馬がゆく.jpg", class: "have-read-book"
+        .tweet-list__right__index__have-read__list__info
+          .tweet-list__right__index__have-read__list__info__top
+            .tweet-list__right__index__have-read__list__info__top__category
+              歴史・地理
+            .tweet-list__right__index__have-read__list__info__top__date
+              2019/3/13
+          .tweet-list__right__index__have-read__list__info__title
+            竜馬がゆく(1)
+    .tweet-list__right__index__recommend-user
+      .tweet-list__right__index__recommend-user__top
+        オススメユーザー
+      .tweet-list__right__index__recommend-user__list
+        .tweet-list__right__index__recommend-user__list__image
+          = image_tag "/そらジロー.jpg", class: "recommend-user"
+        .tweet-list__right__index__recommend-user__list__info
+          .tweet-list__right__index__recommend-user__list__info__name
+            そらジロー
+          .tweet-list__right__index__recommend-user__list__info__ID
+            @soraziroh
+        .tweet-list__right__index__recommend-user__list__button
+          フォロー
+      .tweet-list__right__index__recommend-user__list
+        .tweet-list__right__index__recommend-user__list__image
+          = image_tag "/ずーしーほっきー.jpeg", class: "recommend-user"
+        .tweet-list__right__index__recommend-user__list__info
+          .tweet-list__right__index__recommend-user__list__info__name
+            ずーしーほっきー
+          .tweet-list__right__index__recommend-user__list__info__ID
+            @zushihokki
+        .tweet-list__right__index__recommend-user__list__button
+          フォロー
+      .tweet-list__right__index__recommend-user__list
+        .tweet-list__right__index__recommend-user__list__image
+          = image_tag "/チーバくん.jpg", class: "recommend-user"
+        .tweet-list__right__index__recommend-user__list__info
+          .tweet-list__right__index__recommend-user__list__info__name
+            チーバくん
+          .tweet-list__right__index__recommend-user__list__info__ID
+            @chibakun
+        .tweet-list__right__index__recommend-user__list__button
+          フォロー
+      .tweet-list__right__index__recommend-user__morelist
+        .tweet-list__right__index__recommend-user__morelist__text
+          さらに表示する
+          = fa_icon "chevron-down"

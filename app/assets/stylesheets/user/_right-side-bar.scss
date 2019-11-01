@@ -1,0 +1,148 @@
+.tweet-list__right{
+  width: 33%;
+  height: 100%;
+  background-blend-mode: hard-light;
+  background-size: cover;
+  background-image: linear-gradient(-45deg ,#414d0b, #003300), url(/book_image.jpg);
+  &__index{
+    margin: 20px 170px 0 60px;
+    &__top{
+      width: 100%;
+      padding: 5px 0 5px 45px;
+      box-sizing: border-box;
+      line-height: 30px;
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      background-color: rgba(245, 248, 250, 0.9);
+      &__search-icon{
+        position: absolute;
+        top: 32px;
+        right: 27.5%;
+        color: gray;
+      }
+    }
+    &__top:focus{
+      border-color: none;
+      outline: none;
+    }
+    &__have-read{
+      width: 100%;
+      border-radius: 10px;
+      background-color:rgba(245, 248, 250, 0.9);
+      margin-top: 30px;
+      &__top{
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+      &__list{
+        border-top: solid 1px #414d0b;
+        @include middle_located();
+        min-height: 80px;
+        &__image{
+          width: 20%;
+          @include middle_located();
+          .have-read-book{
+            max-width: 50px;
+            max-height: 50px;
+            object-fit: contain;
+            border: solid 1px #414d0b;
+          }
+        }
+        &__info{
+          width: 80%;
+          padding: 0 15px 0 0;
+          &__top{
+            @include both_end_located();
+            align-items: center;
+            &__category{
+              color: gray;
+              font-size: 12px;
+            }
+            &__date{
+              color: gray;
+              font-size: 12px;
+            }
+          }
+          &__title{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &__recommend-user{
+      width: 100%;
+      border-radius: 10px;
+      background-color:rgba(245, 248, 250, 0.9);
+      margin-top: 30px;
+      &__top{
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+      &__list{
+        border-top: solid 1px #414d0b;
+        min-height: 60px;
+        padding: 0 15px 0 0;
+        @include middle_located();
+        &__image{
+          width: 20%;
+          @include middle_located();
+          .recommend-user{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: solid 1px #414d0b;
+          }
+        }
+        &__info{
+          width: 50%;
+          margin-left: 5px;
+          &__name{
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            -moz-text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+          }
+          &__ID{
+            color: gray;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            -moz-text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+          }
+        }
+        &__button{
+          width: 30%;
+          text-align: center;
+          border: solid 1px #588BCC;
+          background-color: #588BCC;
+          color: white;
+          padding: 2px 5px;
+          border-radius: 20px;
+          transition: background-color;
+        }
+        &__button:hover{
+          background-color: #588BFF;
+        }
+      }
+      &__morelist{
+        border-top: solid 1px #414d0b;
+        height: 35px;
+        @include middle_located();
+        transition: color;
+        .fas.fa-chevron-down{
+          position: relative;
+        }
+      }
+      &__morelist:hover{
+        color: #414d0b;
+        .fas.fa-chevron-down{
+          top: 2px;
+        }
+      }
+    }
+  }
+}
