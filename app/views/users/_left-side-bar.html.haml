@@ -1,0 +1,34 @@
+.tweet-list__left
+  .tweet-list__left__index
+    .tweet-list__left__index__icon
+      = render "icon/icon"
+    .tweet-list__left__index__top
+      Introbooktion
+  .tweet-list__left__selection
+    = link_to root_path, class: "tweet-list__left__selection__box" do
+      .tweet-list__left__selection__box__list
+        = fa_icon "home"
+      .tweet-list__left__selection__box__text
+        ホーム
+    = link_to users_path, class: "tweet-list__left__selection__box" do
+      .tweet-list__left__selection__box__list
+        = fa_icon "users"
+      .tweet-list__left__selection__box__text
+        プロフィール
+    = link_to "/users/1/meter", class: "tweet-list__left__selection__box" do
+      .tweet-list__left__selection__box__list
+        = fa_icon "tachometer-alt"
+      .tweet-list__left__selection__box__text
+        読書メーター
+    = link_to "/users/1/rank", class: "tweet-list__left__selection__box" do
+      .tweet-list__left__selection__box__list
+        = fa_icon "medal"
+      .tweet-list__left__selection__box__text
+        ランキング
+    = link_to "/users/1/make_friends", class: "tweet-list__left__selection__box" do
+      .tweet-list__left__selection__box__list
+        = fa_icon "user-friends"
+      .tweet-list__left__selection__box__text
+        友達を探す
+  .tweet-list__left__button
+    APIを使って投稿する
